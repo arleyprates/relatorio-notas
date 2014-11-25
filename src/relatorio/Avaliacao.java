@@ -7,7 +7,7 @@ import java.util.Map;
 
 public class Avaliacao {
 	
-	private float notas;
+	private float nota;
 	private String nomeAvaliacao;
 	private float peso;
 	
@@ -25,8 +25,31 @@ public class Avaliacao {
 			
 			List<Float> values = entry.getValue();
 			
-			System.out.println("Key = " + key);
-			System.out.println("Values =" + values );
+			this.nomeAvaliacao = key;
+			this.nota = values.get(0);
+			this.peso = values.get(1);
+			
+			//System.out.println("Key = " + key);
+			//System.out.println("Values =" + values );
 		}
-	}		
+	}
+	
+	public void getAvaliacao() {
+		System.out.println(this.nomeAvaliacao);
+		System.out.println(this.nota);
+		System.out.println(this.peso);
+	}
+	
+	public float getNota() {
+		return this.nota;
+	}
+	
+	public String getNomeAvaliacao() {
+		return this.nomeAvaliacao;
+	}
+	
+	public float getPeso() {
+		return this.peso;
+	}
+	
 }
