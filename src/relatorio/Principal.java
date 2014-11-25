@@ -9,9 +9,7 @@ public class Principal {
 		a.setMatricula(210105627);
 		a.setNome("Arley Prates");
 		a.setColegiado(195);
-		a.setNomeAvaliacao("Workshop");
-		a.setNota(10.0f);
-		a.setPeso(3.0f);
+		a.setAvaliacao("Workshop", 10.0f, 3.0f);
 	}
 
 }
