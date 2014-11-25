@@ -1,3 +1,4 @@
+package relatorio;
 
 public class Aluno {
 
