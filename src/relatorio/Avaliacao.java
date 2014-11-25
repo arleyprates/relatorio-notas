@@ -1,26 +1,24 @@
 package relatorio;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 public class Avaliacao {
 	private String nome;
 	private float nota;
 	private float peso;	
 	
-	public String getNomeAvaliacao() {
-		return nome;
+	public void setAvaliacao(String nome, float nota, float peso) {
+		Map<String, List<Float>> mapaNotas = new HashMap<String, List<Float>>();
+		List<Float> setNota = new ArrayList<Float>();
+		setNota.add(nota);
+		setNota.add(peso);
+		mapaNotas.put(nome, setNota);
 	}
-	public void setNomeAvaliacao(String nome) {
-		this.nome = nome;
+	public void getAvaliacao() {
+		
 	}
-	public float getNota() {
-		return nota;
-	}
-	public void setNota(float nota) {
-		this.nota = nota;
-	}
-	public float getPeso() {
-		return peso;
-	}
-	public void setPeso(float peso) {
-		this.peso = peso;
-	}
+		
 }
