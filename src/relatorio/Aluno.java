@@ -31,7 +31,6 @@ public class Aluno extends Avaliacao{
 	}
 	
 	public static void main(String[] args) {
-		//Como trabalhar com ArrayList de classes?
 		Aluno aluno1 = new Aluno();
 		aluno1.matricula = Integer.parseInt("201312453");
 		aluno1.nome = "Mateus Albuquerque dos Anjos";
