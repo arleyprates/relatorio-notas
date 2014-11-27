@@ -1,10 +1,13 @@
 package relatorio;
 
-public class Aluno extends Avaliacao{
+import java.util.ArrayList;
+
+public class Aluno {
 
 	private String nome;
 	private int matricula;
 	private int colegiado;
+	private ArrayList<Avaliacao> avaliacao;
 	
 	public String getNome() {
 		return nome;
@@ -29,21 +32,12 @@ public class Aluno extends Avaliacao{
 	public void setColegiado(int colegiado) {
 		this.colegiado = colegiado;
 	}
-	/*
-	 *public static void main(String[] args) {
-	 *	Aluno aluno1 = new Aluno();
-	 *	aluno1.matricula = Integer.parseInt("201312453");
-	 *	aluno1.nome = "Mateus Albuquerque dos Anjos";
-	 *	aluno1.colegiado = 192;
-	 *	
-         *
-	 *	Aluno aluno2 = new Aluno();
-	 *	aluno2.matricula = Integer.parseInt("201312453");
-	 *	aluno2.nome = "Mateus Henrique dos Santos";
-	 *	aluno2.colegiado = 187;
-	 *	
-	 *	System.out.println(aluno1.matricula + " " + aluno1.nome + " " + aluno1.colegiado);
-	 *	System.out.println(aluno2.matricula + " " + aluno2.nome + " " + aluno2.colegiado);
-	 *}
-	*/
+
+	public ArrayList<Avaliacao> getAvaliacao() {
+		return avaliacao;
+	}
+
+	public void setAvaliacao(ArrayList<Avaliacao> avaliacao) {
+		this.avaliacao = avaliacao;
+	}
 }
