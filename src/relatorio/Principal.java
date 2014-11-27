@@ -1,17 +1,37 @@
 package relatorio;
 
+import java.util.ArrayList;
+
 public class Principal {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		Aluno a = new Aluno();
-		a.setMatricula(210105627);
-		a.setNome("Arley Prates");
-		a.setColegiado(195);
-		a.setAvaliacao("Workshop", 10.0f, 3.0f);
-		a.setAvaliacao("Prova1", 9.0f, 4.0f);
-		a.getAvaliacao();
+		Aluno al = new Aluno();
+		al.setMatricula(210105627);
+		al.setNome("Arley Prates");
+		al.setColegiado(195);
+		
+		ArrayList<Aluno> arrayAluno = new ArrayList<Aluno>();
+		arrayAluno.add(al);
+		
+		Avaliacao av = new Avaliacao();
+		av.setNomeAvaliacao("Prova1");
+		av.setNota(10.0f);
+		av.setPeso(3.0f);
+		
+		ArrayList<Avaliacao> arrayAvaliacao = new ArrayList<Avaliacao>();
+		arrayAvaliacao.add(av);
+		
+		al.setAvaliacao(arrayAvaliacao);
+		
+		System.out.println(al.getNome());
+		System.out.println(al.getMatricula());
+		System.out.println(al.getColegiado());
+		//Duvida como imprimir um arrayList
+		System.out.println(al.getAvaliacao());
+		
+
 	}
 
 }
