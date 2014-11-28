@@ -2,11 +2,14 @@ package relatorio;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+
 import jxl.Cell;
 import jxl.NumberCell;
 import jxl.Sheet;
 import jxl.Workbook;
 import jxl.read.biff.BiffException;
+
 import javax.swing.JOptionPane;
 
 public class ExportaExcel {
@@ -20,32 +23,47 @@ public class ExportaExcel {
 		int linhas = sheet.getRows();
 		boolean a = false;
 		
-		for(int i = 0; i < linhas; i++){			
+		ArrayList<Aluno> arrayAluno = new ArrayList<Aluno>();
+		ArrayList<Avaliacao> arrayAvaliacao = new ArrayList<Avaliacao>();
+		
+		for(int i = 0; i < linhas; i++) {			
 			
 			Cell a1 = sheet.getCell(0,i);
 			String as1 = a1.getContents();
 			
-			if (as1.equals("1")){
+			if (as1.equals("1")) {
 				a = true;
 			}
 				
-			if (a){
+			if (a) {
+				
+				Aluno al = new Aluno();
+				Avaliacao av = new Avaliacao();
+				
 				Cell a2 = sheet.getCell(1,i);
 				String as2 = a2.getContents();
-				//instancia matricula
+				al.setMatricula(Integer.parseInt(as2));				
+				
 				Cell a3 = sheet.getCell(2,i);
 				String as3 = a3.getContents();
-				//instancia nome
+				al.setNome(as3);
+				
 				Cell a4 = sheet.getCell(3,i);
 				String as4 = a4.getContents();
+				av.setNota(Float.parseFloat(as4));				
+				
+				arrayAvaliacao.add(av);
 				
 				Cell a5 = sheet.getCell(4,i);
 				String as5 = a5.getContents();
+				av.setNota(Float.parseFloat(as5));				
 				
-				System.out.println("Matricula:" +  as2);
-				System.out.println("Nome:" +  as3);
-				System.out.println("Nota:" +  as4);
-				System.out.println("Nota:" +  as5);
+				arrayAvaliacao.add(av);
+				
+				arrayAluno.add(al);
+				
+				al.setAvaliacao(arrayAvaliacao);
+		
 			}
 						
 		}
