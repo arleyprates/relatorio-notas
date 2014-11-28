@@ -1,4 +1,4 @@
-package exercicio1;
+package relatorio;
 
 import java.awt.BorderLayout;
 import java.awt.event.FocusAdapter;
