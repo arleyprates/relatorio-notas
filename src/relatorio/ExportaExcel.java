@@ -24,7 +24,6 @@ public class ExportaExcel {
 		boolean a = false;
 		
 		ArrayList<Aluno> arrayAluno = new ArrayList<Aluno>();
-		ArrayList<Avaliacao> arrayAvaliacao = new ArrayList<Avaliacao>();
 		
 		for(int i = 0; i < linhas; i++) {			
 			
@@ -39,6 +38,7 @@ public class ExportaExcel {
 				
 				Aluno al = new Aluno();
 				Avaliacao av = new Avaliacao();
+				ArrayList<Avaliacao> arrayAvaliacao = new ArrayList<Avaliacao>();
 				
 				Cell a2 = sheet.getCell(1,i);
 				String as2 = a2.getContents();
@@ -54,18 +54,26 @@ public class ExportaExcel {
 				
 				arrayAvaliacao.add(av);
 				
-				Cell a5 = sheet.getCell(4,i);
+				Cell a5 = sheet.getCell(3,i);
 				String as5 = a5.getContents();
-				av.setNota(Float.parseFloat(as5));				
+				av.setNota(Float.parseFloat(as5));
 				
 				arrayAvaliacao.add(av);
 				
-				arrayAluno.add(al);
-				
 				al.setAvaliacao(arrayAvaliacao);
+				
+				arrayAluno.add(al);
 		
 			}
 						
+		}
+		
+		for (Aluno value : arrayAluno){
+			System.out.println(value.getMatricula());
+			System.out.println(value.getNome());
+			for (Avaliacao x : value.getAvaliacao()){
+				System.out.println(x.getNota());
+			}
 		}
 		
 		workbook.close();
