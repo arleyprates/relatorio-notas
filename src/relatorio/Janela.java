@@ -43,6 +43,23 @@ public class Janela extends JFrame {
 		arquivo.setFileSelectionMode(JFileChooser.FILES_ONLY);
 
 		SwingUtilities.updateComponentTreeUI(arquivo);
+		
+		// definindo filtro de Extensão para abrir somente csv, xlsx, xls
+		arquivo.setFileFilter(new javax.swing.filechooser.FileFilter() {
+
+			@Override
+			public boolean accept(File file) {
+				return file.getName().toLowerCase().endsWith(".xls")
+						|| file.getName().toLowerCase().endsWith(".csv")
+						|| file.getName().toLowerCase().endsWith(".xlsx")
+						|| file.isDirectory();
+			}
+
+			@Override
+			public String getDescription() {
+				return "Planilhas (.csv, .xls, .xlsx)";
+			}
+		});
 
 		// armazena a escolha do usuário.
 		int resposta = arquivo.showOpenDialog(Janela.this);
