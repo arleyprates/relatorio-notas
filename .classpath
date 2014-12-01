@@ -15,7 +15,7 @@
 	<classpathentry kind="lib" path="lib/itext-xtra-5.5.3.jar"/>
 	<classpathentry kind="lib" path="lib/itextpdf-5.5.3.jar"/>
 	<classpathentry kind="lib" path="lib/poi-3.7-20101029.jar"/>
-	<classpathentry kind="lib" path="C:/Users/IM/Downloads/org.eclipse.jdt.core.manipulation_1.0.0.v20060605-1400.jar"/>
-	<classpathentry kind="lib" path="C:/Users/IM/Downloads/org.eclipse.jdt.core_3.2.0.v_671.jar/org.eclipse.jdt.core_3.2.0.v_671.jar"/>
+	<classpathentry kind="lib" path="lib/org.eclipse.jdt.core_3.2.0.v_671.jar"/>
+	<classpathentry kind="lib" path="lib/org.eclipse.jdt.core.manipulation_1.0.0.v20060605-1400.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
