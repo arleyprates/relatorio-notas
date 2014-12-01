@@ -72,6 +72,9 @@ public class Janela extends JFrame {
 	public Janela() {
 		// final setsize(261,186)
 		setSize(261, 186);
+		//Fazer com que abra centralizado
+		setLocationRelativeTo(null);
+		
 		setAutoRequestFocus(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setResizable(false);
