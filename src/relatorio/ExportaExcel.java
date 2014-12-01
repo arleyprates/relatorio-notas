@@ -5,16 +5,13 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import jxl.Cell;
-import jxl.NumberCell;
 import jxl.Sheet;
 import jxl.Workbook;
 import jxl.read.biff.BiffException;
 
-import javax.swing.JOptionPane;
-
 public class ExportaExcel {
 	
-	public static void main(String[] args) throws IOException, BiffException {
+	public ArrayList<Aluno> todosAlunos()  throws IOException, BiffException{
 		
 		Workbook workbook = Workbook.getWorkbook(new File("files/planilha.xls"));//Colocar o arquivo de excel correto
 		
@@ -76,8 +73,10 @@ public class ExportaExcel {
 			}
 		}
 		
+		System.err.println("Total de Alunos Importados: " + arrayAluno.size());
 		workbook.close();
-	
+		
+		return arrayAluno;
 	}
 	
 }
