@@ -16,7 +16,8 @@ import javax.swing.SwingUtilities;
 
 @SuppressWarnings("serial")
 public class Janela extends JFrame {
-	/**
+	/**abrePath
+	 * 
 	 * Tudo o que esta janela faz é abrir uma janela pequena com apenas dois
 	 * botões de funcoes específicas
 	 * 
@@ -81,7 +82,7 @@ public class Janela extends JFrame {
 	}
 
 	public Janela() {		
-		// final setsize(261,186)
+		// Tamanho da janela
 		setSize(261, 186);
 		// Fazer com que abra centralizado
 		setLocationRelativeTo(null);
@@ -89,7 +90,7 @@ public class Janela extends JFrame {
 		setAutoRequestFocus(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setResizable(false);
-		setTitle("Configura" + String.valueOf("ç") + String.valueOf("ã") + "o");
+		setTitle("Configuracao");
 		getContentPane().setLayout(new GridLayout(0, 1, 20, 20));
 
 		JLabel lblEscolhaOArquivo = new JLabel("Bem vindo ao programa.");
@@ -112,11 +113,7 @@ public class Janela extends JFrame {
 								"Arquivo selecionado:\n"
 										+ caminhoDoArquivo
 										+ "\n\nClique sim para confirmar que é o arquivo correto.\nN" + String.valueOf("ã") + "o para escolher outro. ");
-				if (aceita == JOptionPane.YES_OPTION) {
-					// JOptionPane.showMessageDialog(Janela.this, palavra +
-					// " selecionado. \nCarregando arquivo...", "Confirmacao",
-					// JOptionPane.INFORMATION_MESSAGE);
-				} else if (aceita == JOptionPane.NO_OPTION) {
+				if (aceita == JOptionPane.NO_OPTION) {
 					JOptionPane.showMessageDialog(Janela.this,
 							"Escolha outro arquivo.", "Confirmar",
 							JOptionPane.QUESTION_MESSAGE);
@@ -128,26 +125,21 @@ public class Janela extends JFrame {
 					 * programa;
 					 **/
 					setVisible(false);
+					/*
+					 *Aqui é onde o programa faz seu trabalho
+					 */
 					Principal prog = new Principal();
 					prog.mainly(caminhoDoArquivo);					
 					
 					//System.out.println("Executar o programa aqui\n" + palavra);
-					JOptionPane.showMessageDialog(Janela.this, "Relat" + String.valueOf("ó")
-							+ "rio gerado com sucesso", "Confirma",
+					JOptionPane.showMessageDialog(Janela.this, "Relatorio gerado com sucesso", "Confirma",
 							JOptionPane.INFORMATION_MESSAGE);
-					/*
-					 * decidir: fechar o programa ou abrir o Jasper reports
-					 * fechar o programa somente quando o Jasper for fechado?
-					 * 
-					 * Se for segunda opção: colocar um if para receber retorno
-					 * de fechar do jasper.
-					 */
 					System.exit(EXIT_ON_CLOSE);
 				}
 			}
 		});
 		btnEscolherArquivo
-				.setToolTipText("Clique aqui e selecione o seu arquivo. Ou feche para encerrar o programa.");
+				.setToolTipText("Clique aqui e selecione o seu arquivo.");
 		getContentPane().add(btnEscolherArquivo);
 
 		JButton btnCancelar = new JButton("Cancelar");
