@@ -31,7 +31,7 @@ public class ExportaExcel {
 				a = true;
 			}
 				
-			if (a) {
+		if (a) {
 				
 				Aluno al = new Aluno();
 				Avaliacao av = new Avaliacao();
@@ -47,19 +47,20 @@ public class ExportaExcel {
 				
 				Cell a4 = sheet.getCell(3,i);
 				String as4 = a4.getContents();
-				av.setNota(Float.parseFloat(as4));				
+				av.setNota1(Float.parseFloat(as4));											
 				
-				arrayAvaliacao.add(av);
-				
-				Cell a5 = sheet.getCell(3,i);
+				Cell a5 = sheet.getCell(4,i);
 				String as5 = a5.getContents();
-				av.setNota(Float.parseFloat(as5));
+				av.setNota2(Float.parseFloat(as5));
 				
+				Cell a6 = sheet.getCell(5,i);
+				String as6 = a6.getContents();
+				av.setNota3(Float.parseFloat(as6));
+				
+				arrayAluno.add(al);
 				arrayAvaliacao.add(av);
 				
 				al.setAvaliacao(arrayAvaliacao);
-				
-				arrayAluno.add(al);
 		
 			}
 						
@@ -69,7 +70,9 @@ public class ExportaExcel {
 			System.out.println(value.getMatricula());
 			System.out.println(value.getNome());
 			for (Avaliacao x : value.getAvaliacao()){
-				System.out.println(x.getNota());
+				System.out.println(x.getNota1());
+				System.out.println(x.getNota2());
+				System.out.println(x.getNota3());
 			}
 		}
 		
