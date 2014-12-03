@@ -102,6 +102,7 @@ public class Janela extends JFrame {
 		btnEscolherArquivo.setFont(new Font("Times New Roman", Font.PLAIN, 15));
 		lblEscolhaOArquivo.setLabelFor(btnEscolherArquivo);
 		btnEscolherArquivo.addMouseListener(new MouseAdapter() {
+			@SuppressWarnings("static-access")
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				caminhoDoArquivo = abrePath().getAbsolutePath();
