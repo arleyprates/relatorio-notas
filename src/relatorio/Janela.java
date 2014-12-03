@@ -119,7 +119,7 @@ public class Janela extends JFrame {
 							JOptionPane.QUESTION_MESSAGE);
 					caminhoDoArquivo = abrePath().getAbsolutePath();
 				}
-				if (caminhoDoArquivo != null) {
+				if (aceita == JOptionPane.YES_OPTION && caminhoDoArquivo != null) {
 					/**
 					 * Aqui entra o codigo que chama as funcoes basicas do
 					 * programa;
