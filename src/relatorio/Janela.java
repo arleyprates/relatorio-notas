@@ -81,6 +81,18 @@ public class Janela extends JFrame {
 		return null;
 	}
 
+	/**Janela
+	 * 
+	 * Este método define tamanho, posição e botões que serão exibidos na
+	 * interface.
+	 * 
+	 * Possui somente dois botões JButton:
+	 * Escolher arquivo +> quando clicado abre o escolhedor de arquivos filtrado no tipo .xls
+	 * Cancelar         +> fecha o programa e o encerra de vez sem executar nada.
+	 * 
+	 * Dentro do listener mouseClicked está a execução do programa em si.
+	 * @return
+	 */
 	public Janela() {		
 		// Tamanho da janela
 		setSize(261, 186);
@@ -106,35 +118,42 @@ public class Janela extends JFrame {
 			@SuppressWarnings("static-access")
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				caminhoDoArquivo = abrePath().getAbsolutePath();
-				int aceita = JOptionPane
-						.showConfirmDialog(
-								Janela.this,
-								"Arquivo selecionado:\n"
-										+ caminhoDoArquivo
-										+ "\n\nClique sim para confirmar que é o arquivo correto.\nN" + String.valueOf("ã") + "o para escolher outro. ");
-				if (aceita == JOptionPane.NO_OPTION) {
-					JOptionPane.showMessageDialog(Janela.this,
-							"Escolha outro arquivo.", "Confirmar",
-							JOptionPane.QUESTION_MESSAGE);
-					caminhoDoArquivo = abrePath().getAbsolutePath();
-				}
-				if (aceita == JOptionPane.YES_OPTION && caminhoDoArquivo != null) {
-					/**
-					 * Aqui entra o codigo que chama as funcoes basicas do
-					 * programa;
-					 **/
-					setVisible(false);
-					/*
-					 *Aqui é onde o programa faz seu trabalho
-					 */
-					Principal prog = new Principal();
-					prog.mainly(caminhoDoArquivo);					
-					
-					//System.out.println("Executar o programa aqui\n" + palavra);
-					JOptionPane.showMessageDialog(Janela.this, "Relatorio gerado com sucesso", "Confirma",
-							JOptionPane.INFORMATION_MESSAGE);
-					System.exit(EXIT_ON_CLOSE);
+				File arquivo = abrePath();
+				if (arquivo != null) {
+					caminhoDoArquivo = arquivo.getAbsolutePath();
+
+					int aceita = JOptionPane
+							.showConfirmDialog(
+									Janela.this,
+									"Arquivo selecionado:\n"
+											+ caminhoDoArquivo
+											+ "\n\nClique sim para confirmar que é o arquivo correto.\nNao para escolher outro. ");
+					if (aceita == JOptionPane.NO_OPTION) {
+						JOptionPane.showMessageDialog(Janela.this,
+								"Escolha outro arquivo.", "Confirmar",
+								JOptionPane.QUESTION_MESSAGE);
+						caminhoDoArquivo = abrePath().getAbsolutePath();
+					}
+					if (aceita == JOptionPane.YES_OPTION
+							&& caminhoDoArquivo != null) {
+						/**
+						 * Aqui entra o codigo que chama as funcoes basicas do
+						 * programa;
+						 **/
+						setVisible(false);
+						/*
+						 * Aqui é onde o programa faz seu trabalho
+						 */
+						Principal prog = new Principal();
+						prog.mainly(caminhoDoArquivo);
+
+						// System.out.println("Executar o programa aqui\n" +
+						// palavra);
+						JOptionPane.showMessageDialog(Janela.this,
+								"Relatorio gerado com sucesso", "Confirma",
+								JOptionPane.INFORMATION_MESSAGE);
+						System.exit(EXIT_ON_CLOSE);
+					}
 				}
 			}
 		});
