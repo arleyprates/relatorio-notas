@@ -16,7 +16,7 @@ import javax.swing.SwingUtilities;
 
 @SuppressWarnings("serial")
 public class Janela extends JFrame {
-	/**abrePath
+	/**Janela
 	 * 
 	 * Tudo o que esta janela faz é abrir uma janela pequena com apenas dois
 	 * botões de funcoes específicas
@@ -39,7 +39,8 @@ public class Janela extends JFrame {
 		this.caminhoDoArquivo = palavra;
 	}
 
-	/**
+	/**File abrePath
+	 * 
 	 * Este eh o metodo responsavel por abrir um chooser file (escolhedor de
 	 * arquivos) Basta procurar e clicar duas vezes ou clicar no arquivo e
 	 * depois em abrir.
