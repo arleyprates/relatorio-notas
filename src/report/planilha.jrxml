@@ -1,43 +1,112 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.0.0.final using JasperReports Library version 6.0.0  -->
-<!-- 2014-12-01T13:22:55 -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Planilha" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="39eb2466-8df3-4a1a-b1a5-5b938ea0eaa5">
-	<queryString>
+<!-- 2014-12-07T14:04:37 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="planilha" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d7116c80-1097-472b-9bcf-08fcdc3f861d">
+	<queryString language="SQL">
 		<![CDATA[]]>
 	</queryString>
 	<field name="colegiado" class="java.lang.Integer">
 		<fieldDescription><![CDATA[colegiado]]></fieldDescription>
 	</field>
-	<field name="matricula" class="java.lang.Integer">
-		<fieldDescription><![CDATA[matricula]]></fieldDescription>
+	<field name="class" class="java.lang.Class">
+		<fieldDescription><![CDATA[class]]></fieldDescription>
 	</field>
 	<field name="nome" class="java.lang.String">
 		<fieldDescription><![CDATA[nome]]></fieldDescription>
 	</field>
-	<field name="avaliacao" class="java.util.ArrayList">
-		<fieldDescription><![CDATA[avaliacao]]></fieldDescription>
+	<field name="avaliacao[0]" class="java.lang.String"/>
+	<field name="avaliacao[1]" class="java.lang.String"/>
+	<field name="matricula" class="java.lang.Integer">
+		<fieldDescription><![CDATA[matricula]]></fieldDescription>
 	</field>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="79" splitType="Stretch"/>
+		<band height="95" splitType="Stretch"/>
 	</title>
 	<pageHeader>
-		<band height="35" splitType="Stretch"/>
+		<band height="47" splitType="Stretch"/>
 	</pageHeader>
 	<columnHeader>
-		<band height="61" splitType="Stretch"/>
+		<band height="77" splitType="Stretch">
+			<staticText>
+				<reportElement x="4" y="30" width="57" height="20" uuid="b52c777e-f65f-4e9a-9792-7519435eb1cb"/>
+				<text><![CDATA[Matricula]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="74" y="30" width="40" height="20" uuid="9d22b626-c14a-40c0-a576-449c7e0d327c"/>
+				<text><![CDATA[Nome]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="277" y="30" width="40" height="20" uuid="04de1126-d9e2-4e59-a54e-155e6b340f88"/>
+				<text><![CDATA[Coleg.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="325" y="30" width="39" height="20" uuid="bac83b1c-eb53-42d9-873e-25e874054ad5"/>
+				<text><![CDATA[1º Nota]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="375" y="30" width="39" height="20" uuid="914969c9-32bf-4569-9a53-a7f9026453e5"/>
+				<text><![CDATA[2º Nota]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="435" y="30" width="39" height="20" uuid="58fe3b58-b11d-43f6-bda7-13d1b55c6cb6"/>
+				<text><![CDATA[3º Nota]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="485" y="30" width="39" height="20" uuid="fa556669-900e-4911-9cea-0c802631fde5"/>
+				<text><![CDATA[4º Nota]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="535" y="30" width="39" height="20" uuid="dbb66d91-bc96-45e6-9dcb-c624b19a34b6"/>
+				<text><![CDATA[5º Nota]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="585" y="29" width="39" height="22" uuid="a43a8580-869b-40b7-9198-1a1f090a277a"/>
+				<text><![CDATA[6º Nota]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="635" y="30" width="39" height="30" uuid="cc63db27-ea97-4cac-a9e0-d5636b201d25"/>
+				<text><![CDATA[Média
+X6]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="685" y="31" width="39" height="29" uuid="7747afaa-9d4a-4551-8338-34e01cdd1d4e"/>
+				<text><![CDATA[Final
+Final x4]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="735" y="31" width="39" height="20" uuid="70c5b770-07b3-4463-b41d-8463a384e172"/>
+				<text><![CDATA[Nota]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="777" y="30" width="39" height="20" uuid="9a5cf2d6-5e83-45bc-a5df-ba41ad57cb59"/>
+				<text><![CDATA[Resultado]]></text>
+			</staticText>
+		</band>
 	</columnHeader>
 	<detail>
-		<band height="286" splitType="Stretch">
+		<band height="58" splitType="Stretch">
 			<textField>
-				<reportElement x="0" y="20" width="250" height="21" uuid="68c8dc5a-80b6-4771-b504-f0f705b601c0"/>
-				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
+				<reportElement x="318" y="0" width="20" height="20" uuid="0e3dfc4b-82ff-41b7-91ea-4e6790221692"/>
+				<textFieldExpression><![CDATA[$F{avaliacao[0]}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="271" y="22" width="79" height="19" uuid="4a011fad-4b58-4b71-a2fb-83b5ef3b37c9"/>
+				<reportElement x="4" y="0" width="60" height="20" uuid="7cad4adc-c668-48e6-8ebe-a82c8ddc800e"/>
 				<textFieldExpression><![CDATA[$F{matricula}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="277" y="0" width="20" height="20" uuid="8ff9d8df-36a8-4f79-9a67-3e80f969022c"/>
+				<textFieldExpression><![CDATA[$F{colegiado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="348" y="0" width="20" height="20" uuid="7320c6f6-2571-416e-ad7d-fb24d5bb3748"/>
+				<textFieldExpression><![CDATA[$F{avaliacao[1]}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="77" y="0" width="187" height="20" uuid="63d2b84f-9cc6-4121-9089-b8423ca1862c"/>
+				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
