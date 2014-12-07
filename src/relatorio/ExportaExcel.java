@@ -3,6 +3,7 @@ package relatorio;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 import jxl.Cell;
 import jxl.Sheet;
@@ -34,8 +35,8 @@ public class ExportaExcel {
 			if (a) {
 				
 				Aluno al = new Aluno();
-				Avaliacao av = new Avaliacao();
-				ArrayList<Avaliacao> arrayAvaliacao = new ArrayList<Avaliacao>();
+				//Avaliacao av = new Avaliacao();
+				//List<Avaliacao> arrayAvaliacao = new ArrayList<Avaliacao>();
 				
 				Cell a2 = sheet.getCell(1,i);
 				String as2 = a2.getContents();
@@ -47,17 +48,26 @@ public class ExportaExcel {
 				
 				Cell a4 = sheet.getCell(3,i);
 				String as4 = a4.getContents();
-				av.setNota(Float.parseFloat(as4));				
 				
-				arrayAvaliacao.add(av);
+				//av.setNota(Float.parseFloat(as4));				
+				
+				al.setAvaliacao(as4, 0);
+				//arrayAvaliacao.add(av);
+				
 				
 				Cell a5 = sheet.getCell(3,i);
 				String as5 = a5.getContents();
-				av.setNota(Float.parseFloat(as5));
+				//av.setNota(Float.parseFloat(as5));
 				
-				arrayAvaliacao.add(av);
+				al.setAvaliacao(as5, 1);
 				
-				al.setAvaliacao(arrayAvaliacao);
+				System.out.println(al.getAvaliacao(0));
+				System.out.println(al.getAvaliacao(1));
+				//arrayAvaliacao.add(av);
+				
+				//Aluno aluno = new Aluno(as3, Integer.parseInt(as2), arrayAvaliacao);
+				
+				//al.setAvaliacao(arrayAvaliacao);				
 				
 				arrayAluno.add(al);
 		
@@ -65,13 +75,13 @@ public class ExportaExcel {
 						
 		}
 		
-		for (Aluno value : arrayAluno){
-			System.out.println(value.getMatricula());
-			System.out.println(value.getNome());
-			for (Avaliacao x : value.getAvaliacao()){
-				System.out.println(x.getNota());
-			}
-		}
+		//for (Aluno value : arrayAluno){
+			//System.out.println(value.getMatricula());
+			//System.out.println(value.getNome());
+			//for (Avaliacao x : value.getAvaliacao()){
+				//System.out.println(x.getNota());
+			//}//
+		//}
 		
 		System.err.println("Total de Alunos Importados: " + arrayAluno.size());
 		workbook.close();
