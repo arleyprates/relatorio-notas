@@ -1,19 +1,26 @@
 package report;
 
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.swing.WindowConstants;
 
+import relatorio.Aluno;
+import relatorio.ExportaExcel;
 import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.engine.JasperRunManager;
+import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import net.sf.jasperreports.view.JasperViewer;
 
 public class PlanilhaReport {
 	
 	private JasperReport report; 
+	//private static final String pathSubRel = "report/subreport.jasper";
 	
 	public void Planilha(){
 		try{
@@ -21,10 +28,12 @@ public class PlanilhaReport {
 			InputStream relJasper = getClass().getResourceAsStream(caminhoRelJasper);
 			
 			report = JasperCompileManager.compileReport(relJasper);
-			
+
 			PlanilhaDataSource planilhaDataSource = new PlanilhaDataSource();
 			
 			JasperPrint jp;
+			//Map<String, Object> parametros = new HashMap<String, Object>();
+			//parametros.put("pathSubRel", pathSubRel);
 			jp = JasperFillManager.fillReport(report,null,planilhaDataSource);
 			JasperRunManager.runReportToPdf (report, null, planilhaDataSource);
 			JasperViewer viewer = new JasperViewer(jp, false);

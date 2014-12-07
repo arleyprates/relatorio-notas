@@ -16,26 +16,37 @@ import javax.swing.SwingUtilities;
 
 @SuppressWarnings("serial")
 public class Janela extends JFrame {
-	/**
-	 * Tudo o que esta janela faz é abrir uma janela pequena com apenas dois
-	 * botões de funções específicas
+	/**Janela
 	 * 
-	 * O primeiro abre uma janela de diálogo de busca em diretório do sistema.
+	 * Tudo o que esta janela faz é abrir uma janela pequena com apenas dois
+	 * botões de funcoes específicas
+	 * 
+	 * O primeiro abre uma janela de dialogo de busca em diretório do sistema.
 	 * Retorna uma String com o endereço do arquivo.
 	 * 
 	 * O segundo botão simplesmente cancela e fecha o programa.
+	 * 
+	 * @return
 	 **/
 
-	private String palavra;
+	private String caminhoDoArquivo;
 
 	public String getPalavra() {
-		return palavra;
+		return caminhoDoArquivo;
 	}
 
 	public void setPalavra(String palavra) {
-		this.palavra = palavra;
+		this.caminhoDoArquivo = palavra;
 	}
 
+	/**File abrePath
+	 * 
+	 * Este eh o metodo responsavel por abrir um chooser file (escolhedor de
+	 * arquivos) Basta procurar e clicar duas vezes ou clicar no arquivo e
+	 * depois em abrir.
+	 * 
+	 * @return
+	 */
 	public File abrePath() {
 		JFileChooser arquivo = new JFileChooser();
 
@@ -43,21 +54,23 @@ public class Janela extends JFrame {
 		arquivo.setFileSelectionMode(JFileChooser.FILES_ONLY);
 
 		SwingUtilities.updateComponentTreeUI(arquivo);
-		
-		// definindo filtro de Extensão para abrir somente csv, xlsx, xls
+
+		// definindo filtro de Extensao para abrir somente csv, xlsx, xls
 		arquivo.setFileFilter(new javax.swing.filechooser.FileFilter() {
 
 			@Override
 			public boolean accept(File file) {
 				return file.getName().toLowerCase().endsWith(".xls")
-						|| file.getName().toLowerCase().endsWith(".csv")
-						|| file.getName().toLowerCase().endsWith(".xlsx")
-						|| file.isDirectory();
+				/*
+				 * || file.getName().toLowerCase().endsWith(".csv") ||
+				 * file.getName().toLowerCase().endsWith(".xlsx")
+				 */
+				|| file.isDirectory();
 			}
 
 			@Override
 			public String getDescription() {
-				return "Planilhas (.csv, .xls, .xlsx)";
+				return "Planilhas (.xls)"; // , .csv, .xlsx)";
 			}
 		});
 
@@ -69,16 +82,28 @@ public class Janela extends JFrame {
 		return null;
 	}
 
-	public Janela() {
-		// final setsize(261,186)
+	/**Janela
+	 * 
+	 * Este método define tamanho, posição e botões que serão exibidos na
+	 * interface.
+	 * 
+	 * Possui somente dois botões JButton:
+	 * Escolher arquivo +> quando clicado abre o escolhedor de arquivos filtrado no tipo .xls
+	 * Cancelar         +> fecha o programa e o encerra de vez sem executar nada.
+	 * 
+	 * Dentro do listener mouseClicked está a execução do programa em si.
+	 * @return
+	 */
+	public Janela() {		
+		// Tamanho da janela
 		setSize(261, 186);
-		//Fazer com que abra centralizado
+		// Fazer com que abra centralizado
 		setLocationRelativeTo(null);
-		
+
 		setAutoRequestFocus(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setResizable(false);
-		setTitle("Configuração");
+		setTitle("Configuracao");
 		getContentPane().setLayout(new GridLayout(0, 1, 20, 20));
 
 		JLabel lblEscolhaOArquivo = new JLabel("Bem vindo ao programa.");
@@ -86,42 +111,55 @@ public class Janela extends JFrame {
 		lblEscolhaOArquivo.setFont(new Font("Times New Roman", Font.BOLD, 18));
 		lblEscolhaOArquivo.setHorizontalAlignment(SwingConstants.CENTER);
 		getContentPane().add(lblEscolhaOArquivo);
+
 		JButton btnEscolherArquivo = new JButton("Escolher arquivo");
 		btnEscolherArquivo.setFont(new Font("Times New Roman", Font.PLAIN, 15));
 		lblEscolhaOArquivo.setLabelFor(btnEscolherArquivo);
 		btnEscolherArquivo.addMouseListener(new MouseAdapter() {
+			@SuppressWarnings("static-access")
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				palavra = abrePath().getAbsolutePath();
-				int aceita = JOptionPane.showConfirmDialog(Janela.this,
-						"Arquivo selecionado:\n" + palavra + "\nEnviar arquivo? ");
-				if (aceita == JOptionPane.YES_OPTION) {
-					JOptionPane.showMessageDialog(Janela.this, palavra + " selecionado. \nCarregando arquivo...", "Confirmação", JOptionPane.INFORMATION_MESSAGE);
-				} else if (aceita == JOptionPane.NO_OPTION) {
-					JOptionPane.showMessageDialog(Janela.this,
-							"Escolha outro arquivo.", "Confirmação", JOptionPane.QUESTION_MESSAGE);
-					palavra = abrePath().getAbsolutePath();
-				}
-				if (palavra != null) {
-					/**
-					 * Aqui entra o código que chama as funções básicas do
-					 * programa;
-					 **/
-					System.out.println("Executar o programa aqui");
-					setVisible(false);
-					JOptionPane.showMessageDialog(Janela.this, "Relatório gerado com sucesso", "Confirmação", JOptionPane.INFORMATION_MESSAGE);
-					/*decidir: fechar o programa ou abrir o Jasper reports
-					 * fechar o programa somente quando o Jaser for fechado?
-					 * 
-					 * Se for segunda opção:
-					 * colocar um if para receber retorno de fechar do jasper.
-					 */
-					System.exit(EXIT_ON_CLOSE);
+				File arquivo = abrePath();
+				if (arquivo != null) {
+					caminhoDoArquivo = arquivo.getAbsolutePath();
+
+					int aceita = JOptionPane
+							.showConfirmDialog(
+									Janela.this,
+									"Arquivo selecionado:\n"
+											+ caminhoDoArquivo
+											+ "\n\nClique sim para confirmar que é o arquivo correto.\nNao para escolher outro. ");
+					if (aceita == JOptionPane.NO_OPTION) {
+						JOptionPane.showMessageDialog(Janela.this,
+								"Escolha outro arquivo.", "Confirmar",
+								JOptionPane.QUESTION_MESSAGE);
+						caminhoDoArquivo = abrePath().getAbsolutePath();
+					}
+					if (aceita == JOptionPane.YES_OPTION
+							&& caminhoDoArquivo != null) {
+						/**
+						 * Aqui entra o codigo que chama as funcoes basicas do
+						 * programa;
+						 **/
+						setVisible(false);
+						/*
+						 * Aqui é onde o programa faz seu trabalho
+						 */
+						Principal prog = new Principal();
+						prog.mainly(caminhoDoArquivo);
+
+						// System.out.println("Executar o programa aqui\n" +
+						// palavra);
+						JOptionPane.showMessageDialog(Janela.this,
+								"Relatorio gerado com sucesso", "Confirma",
+								JOptionPane.INFORMATION_MESSAGE);
+						System.exit(EXIT_ON_CLOSE);
+					}
 				}
 			}
 		});
 		btnEscolherArquivo
-				.setToolTipText("Clique aqui e selecione o seu arquivo. Ou feche para encerrar o programa.");
+				.setToolTipText("Clique aqui e selecione o seu arquivo.");
 		getContentPane().add(btnEscolherArquivo);
 
 		JButton btnCancelar = new JButton("Cancelar");
