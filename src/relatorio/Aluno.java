@@ -1,13 +1,30 @@
 package relatorio;
 
-import java.util.ArrayList;
+//import java.util.ArrayList;
+//import java.util.List;
 
 public class Aluno {
 
 	private String nome;
 	private int matricula;
 	private int colegiado;
-	private ArrayList<Avaliacao> avaliacao;
+	private String avaliacao[] = new String[4];
+	
+	//public Aluno(String nome, int matricula, ArrayList avaliacao){
+		///super();
+		//this.nome = nome;
+		//this.matricula = matricula;
+		//this.colegiado = colegiado;
+		//this.avaliacao = avaliacao;
+	//}
+	
+	public void setAvaliacao(String avaliacao, int i) {
+		this.avaliacao[i] = avaliacao;
+	}
+	
+	public String getAvaliacao(int i) {
+		return this.avaliacao[i];
+	} 
 	
 	public String getNome() {
 		return nome;
@@ -33,11 +50,11 @@ public class Aluno {
 		this.colegiado = colegiado;
 	}
 
-	public ArrayList<Avaliacao> getAvaliacao() {
-		return avaliacao;
-	}
+	//public List<Avaliacao> getAvaliacao() {
+	//	return avaliacao;
+	//}
 
-	public void setAvaliacao(ArrayList<Avaliacao> avaliacao) {
-		this.avaliacao = avaliacao;
-	}
+	//public void setAvaliacao(List<Avaliacao> avaliacao) {
+	//	this.avaliacao = avaliacao;
+	//}
 }
