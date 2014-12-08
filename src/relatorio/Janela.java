@@ -14,6 +14,8 @@ import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
 import javax.swing.SwingUtilities;
 
+import report.PlanilhaReport;
+
 @SuppressWarnings("serial")
 public class Janela extends JFrame {
 	/**Janela
@@ -145,8 +147,10 @@ public class Janela extends JFrame {
 						/*
 						 * Aqui é onde o programa faz seu trabalho
 						 */
-						Principal prog = new Principal();
-						prog.mainly(caminhoDoArquivo);
+						
+						PlanilhaReport pr = new PlanilhaReport();						
+						pr.Planilha();
+						
 
 						// System.out.println("Executar o programa aqui\n" +
 						// palavra);
