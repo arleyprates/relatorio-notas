@@ -60,7 +60,7 @@ public class ExportaExcel {
 				//arrayAvaliacao.add(av);
 				
 				
-				Cell a5 = sheet.getCell(3,i);
+				Cell a5 = sheet.getCell(4,i);
 				String as5 = a5.getContents();
 				//av.setNota(Float.parseFloat(as5));
 				
