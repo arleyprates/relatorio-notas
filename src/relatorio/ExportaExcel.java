@@ -11,9 +11,15 @@ import jxl.read.biff.BiffException;
 
 public class ExportaExcel {
 	
+	private String diretorioPlanilha;
+	
+	public ExportaExcel(String diretorioXLS){
+		this.diretorioPlanilha = diretorioXLS;		
+	}
+	
 	public ArrayList<Aluno> todosAlunos()  throws IOException, BiffException{
 		
-		Workbook workbook = Workbook.getWorkbook(new File("files/planilha.xls"));//Colocar o arquivo de excel correto
+		Workbook workbook = Workbook.getWorkbook(new File(diretorioPlanilha));//Colocar o arquivo de excel correto
 		
 		Sheet sheet = workbook.getSheet(0);
 		

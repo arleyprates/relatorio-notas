@@ -149,7 +149,7 @@ public class Janela extends JFrame {
 						 */
 						
 						PlanilhaReport pr = new PlanilhaReport();						
-						pr.Planilha();
+						pr.Planilha(caminhoDoArquivo);
 						
 
 						// System.out.println("Executar o programa aqui\n" +

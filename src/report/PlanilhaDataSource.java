@@ -25,8 +25,8 @@ public class PlanilhaDataSource implements JRDataSource {
 	//	super();
 	//	this.itrAlunos = lista.iterator();
 	//}
-	public PlanilhaDataSource() throws BiffException, IOException {
-		ExportaExcel exportarExcel = new ExportaExcel();
+	public PlanilhaDataSource(String diretorioXLS) throws BiffException, IOException {
+		ExportaExcel exportarExcel = new ExportaExcel(diretorioXLS);
 		alunos = exportarExcel.todosAlunos();
 		beanCollection = new JRBeanCollectionDataSource(alunos);
 	}

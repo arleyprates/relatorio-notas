@@ -17,24 +17,31 @@ import net.sf.jasperreports.engine.JasperRunManager;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import net.sf.jasperreports.view.JasperViewer;
 
+import net.sf.jasperreports.engine.JasperExportManager;
+
 public class PlanilhaReport {
 	
-	private JasperReport report; 
+	private String diretorioPDF;
+	private JasperReport report;
 	//private static final String pathSubRel = "report/subreport.jasper";
 	
-	public void Planilha(){
+	public void Planilha(String diretorioXLS){
 		try{
 			String caminhoRelJasper = "planilha.jrxml";
 			InputStream relJasper = getClass().getResourceAsStream(caminhoRelJasper);
 			
 			report = JasperCompileManager.compileReport(relJasper);
 
-			PlanilhaDataSource planilhaDataSource = new PlanilhaDataSource();
+			PlanilhaDataSource planilhaDataSource = new PlanilhaDataSource(diretorioXLS);
 			
 			JasperPrint jp;
 			//Map<String, Object> parametros = new HashMap<String, Object>();
 			//parametros.put("pathSubRel", pathSubRel);
 			jp = JasperFillManager.fillReport(report,null,planilhaDataSource);
+			
+			diretorioPDF = diretorioXLS.replaceAll(".xls", ".pdf");
+			JasperExportManager.exportReportToPdfFile(jp, diretorioPDF);
+			
 			JasperRunManager.runReportToPdf (report, null, planilhaDataSource);
 			JasperViewer viewer = new JasperViewer(jp, false);
 			//viewer.setTitle(titulo);
