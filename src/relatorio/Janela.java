@@ -80,6 +80,8 @@ public class Janela extends JFrame {
 		int resposta = arquivo.showOpenDialog(Janela.this);
 		if (resposta == JFileChooser.APPROVE_OPTION) {
 			return arquivo.getSelectedFile();
+		}else if (resposta == JFileChooser.CANCEL_OPTION){
+			System.exit(DO_NOTHING_ON_CLOSE);
 		}
 		return null;
 	}
@@ -133,7 +135,7 @@ public class Janela extends JFrame {
 		btnEscolherArquivo.setFont(new Font("Times New Roman", Font.PLAIN, 15));
 		lblEscolhaOArquivo.setLabelFor(btnEscolherArquivo);
 		btnEscolherArquivo.addMouseListener(new MouseAdapter() {
-			@SuppressWarnings("static-access")
+			//@SuppressWarnings("static-access")
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				File arquivo = abrePath();
@@ -142,7 +144,7 @@ public class Janela extends JFrame {
 
 					int aceita = confirma();
 					
-					if (aceita == JOptionPane.NO_OPTION) {
+					while (aceita == JOptionPane.NO_OPTION) {
 						JOptionPane.showMessageDialog(Janela.this,
 								"Escolha outro arquivo.", "Confirmar",
 								JOptionPane.QUESTION_MESSAGE);
