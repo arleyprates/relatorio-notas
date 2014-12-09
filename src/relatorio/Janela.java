@@ -130,7 +130,7 @@ public class Janela extends JFrame {
 									Janela.this,
 									"Arquivo selecionado:\n"
 											+ caminhoDoArquivo
-											+ "\n\nClique sim para confirmar que é o arquivo correto.\nNao para escolher outro. ");
+											+ "\n\nClique sim para confirmar que eh o arquivo correto.\nNao para escolher outro. ");
 					if (aceita == JOptionPane.NO_OPTION) {
 						JOptionPane.showMessageDialog(Janela.this,
 								"Escolha outro arquivo.", "Confirmar",
