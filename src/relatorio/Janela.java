@@ -83,6 +83,21 @@ public class Janela extends JFrame {
 		}
 		return null;
 	}
+	
+	/** confirma
+	 * 
+	 * verifica se eh de fato o arquivo desejado.
+	 * @return
+	 **/
+	private int confirma() {
+		return JOptionPane
+				.showConfirmDialog(
+						Janela.this,
+						"Arquivo selecionado:\n"
+								+ caminhoDoArquivo
+								+ "\n\nClique sim para confirmar que eh o arquivo correto.\nNao para escolher outro. ");
+
+	}
 
 	/**Janela
 	 * 
@@ -125,18 +140,17 @@ public class Janela extends JFrame {
 				if (arquivo != null) {
 					caminhoDoArquivo = arquivo.getAbsolutePath();
 
-					int aceita = JOptionPane
-							.showConfirmDialog(
-									Janela.this,
-									"Arquivo selecionado:\n"
-											+ caminhoDoArquivo
-											+ "\n\nClique sim para confirmar que eh o arquivo correto.\nNao para escolher outro. ");
+					int aceita = confirma();
+					
 					if (aceita == JOptionPane.NO_OPTION) {
 						JOptionPane.showMessageDialog(Janela.this,
 								"Escolha outro arquivo.", "Confirmar",
 								JOptionPane.QUESTION_MESSAGE);
 						caminhoDoArquivo = abrePath().getAbsolutePath();
+						//garante que o arquivo seja confirmado ou trocado.
+						aceita = confirma();
 					}
+					
 					if (aceita == JOptionPane.YES_OPTION
 							&& caminhoDoArquivo != null) {
 						/**
