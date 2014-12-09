@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="planilha" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d7116c80-1097-472b-9bcf-08fcdc3f861d">
-	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.zoom" value="1.2100000000000002"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
 	<queryString language="SQL">
@@ -117,14 +117,14 @@
 	<columnHeader>
 		<band height="40" splitType="Stretch">
 			<staticText>
-				<reportElement x="5" y="23" width="50" height="14" uuid="b52c777e-f65f-4e9a-9792-7519435eb1cb"/>
+				<reportElement x="5" y="23" width="38" height="14" uuid="b52c777e-f65f-4e9a-9792-7519435eb1cb"/>
 				<textElement>
 					<font size="8"/>
 				</textElement>
 				<text><![CDATA[Matricula]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="70" y="23" width="30" height="14" uuid="9d22b626-c14a-40c0-a576-449c7e0d327c"/>
+				<reportElement x="55" y="23" width="30" height="14" uuid="9d22b626-c14a-40c0-a576-449c7e0d327c"/>
 				<textElement>
 					<font size="8"/>
 				</textElement>
@@ -295,14 +295,14 @@
 				<textFieldExpression><![CDATA[$F{avaliacao[1]}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="70" y="2" width="180" height="14" uuid="63d2b84f-9cc6-4121-9089-b8423ca1862c"/>
+				<reportElement x="55" y="2" width="195" height="14" uuid="63d2b84f-9cc6-4121-9089-b8423ca1862c"/>
 				<textElement>
 					<font size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="5" y="2" width="60" height="14" uuid="7cad4adc-c668-48e6-8ebe-a82c8ddc800e"/>
+				<reportElement x="5" y="2" width="50" height="14" uuid="7cad4adc-c668-48e6-8ebe-a82c8ddc800e"/>
 				<textElement>
 					<font size="8"/>
 				</textElement>
