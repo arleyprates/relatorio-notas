@@ -18,6 +18,11 @@
 	<field name="nome" class="java.lang.String">
 		<fieldDescription><![CDATA[nome]]></fieldDescription>
 	</field>
+	<field name="universidade" class="java.lang.String"/>
+	<field name="periodoLetivo" class="java.lang.String"/>
+	<field name="numeroDisciplina" class="java.lang.String"/>
+	<field name="cargaHoraria" class="java.lang.String"/>
+	<field name="disciplina" class="java.lang.String"/>
 	<field name="avaliacao[0]" class="java.lang.String"/>
 	<field name="avaliacao[1]" class="java.lang.String"/>
 	<field name="avaliacao[2]" class="java.lang.String"/>
