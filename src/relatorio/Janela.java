@@ -173,7 +173,7 @@ public class Janela extends JFrame {
 						JOptionPane.showMessageDialog(Janela.this,
 								"Relatorio gerado com sucesso", "Confirma",
 								JOptionPane.INFORMATION_MESSAGE);
-						System.exit(EXIT_ON_CLOSE);
+						//System.exit(EXIT_ON_CLOSE);
 					}
 				}
 			}
