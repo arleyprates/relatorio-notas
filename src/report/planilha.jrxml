@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="planilha" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d7116c80-1097-472b-9bcf-08fcdc3f861d">
 	<property name="ireport.zoom" value="1.2100000000000002"/>
-	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="0"/>
+	<property name="ireport.x" value="361"/>
+	<property name="ireport.y" value="17"/>
 	<queryString language="SQL">
 		<![CDATA[]]>
 	</queryString>
@@ -12,14 +12,19 @@
 	<field name="class" class="java.lang.Class">
 		<fieldDescription><![CDATA[class]]></fieldDescription>
 	</field>
+	<field name="matricula" class="java.lang.Integer">
+		<fieldDescription><![CDATA[matricula]]></fieldDescription>
+	</field>
 	<field name="nome" class="java.lang.String">
 		<fieldDescription><![CDATA[nome]]></fieldDescription>
 	</field>
 	<field name="avaliacao[0]" class="java.lang.String"/>
 	<field name="avaliacao[1]" class="java.lang.String"/>
-	<field name="matricula" class="java.lang.Integer">
-		<fieldDescription><![CDATA[matricula]]></fieldDescription>
-	</field>
+	<field name="avaliacao[2]" class="java.lang.String"/>
+	<field name="avaliacao[3]" class="java.lang.String"/>
+	<field name="avaliacao[4]" class="java.lang.String"/>
+	<field name="avaliacao[5]" class="java.lang.String"/>
+	<field name="media" class="java.lang.String"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -272,7 +277,7 @@
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="17" splitType="Stretch">
+		<band height="31" splitType="Stretch">
 			<textField>
 				<reportElement x="307" y="2" width="20" height="14" uuid="0e3dfc4b-82ff-41b7-91ea-4e6790221692"/>
 				<textElement>
@@ -307,6 +312,38 @@
 					<font size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{matricula}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="407" y="2" width="20" height="14" uuid="a89a8f34-564f-4cb6-963a-392cc47e1b42"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{avaliacao[2]}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="457" y="2" width="20" height="14" uuid="a36880c7-9733-43be-964e-650591e551e6"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{avaliacao[3]}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="507" y="2" width="20" height="14" uuid="f385acd5-06c4-4af7-abe7-c938023ea6ae"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{avaliacao[4]}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="557" y="2" width="20" height="14" uuid="5903b62d-cae9-4229-a801-384799a95b1e"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{avaliacao[5]}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="607" y="2" width="69" height="20" uuid="1b2b68e5-fe72-4b1d-947d-c1f2d8584793"/>
+				<textFieldExpression><![CDATA[$F{media}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
