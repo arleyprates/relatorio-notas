@@ -5,5 +5,5 @@ Faltam fazer:
 3=> Trabalhar com herança
 4=> Documentar o código
 5=> limpar classes, métodos e atributos inúteis
-6=> filtrar para somente abrir .xls
+6=> filtrar para somente abrir .xls pelo filechooser.
 7=> mostrar caixa de diálogo indicando erro de tipo.
