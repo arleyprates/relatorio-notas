@@ -8,7 +8,8 @@ public class Aluno {
 	private String nome;
 	private int matricula;
 	private int colegiado;
-	private String avaliacao[] = new String[4];
+	private String avaliacao[] = new String[6];
+	private String media;
 	
 	//public Aluno(String nome, int matricula, ArrayList avaliacao){
 		///super();
@@ -17,6 +18,14 @@ public class Aluno {
 		//this.colegiado = colegiado;
 		//this.avaliacao = avaliacao;
 	//}
+	
+	public String getMedia(){
+		return media;
+	}
+	
+	public void setMedia(String media){
+		this.media = media;
+	}
 	
 	public void setAvaliacao(String avaliacao, int i) {
 		this.avaliacao[i] = avaliacao;
