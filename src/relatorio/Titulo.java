@@ -2,7 +2,7 @@ package relatorio;
 
 public class Titulo {
 	private String universidade;
-	private String numeroRegistro;
+	private String numeroDisciplina;
 	private String departamento;
 	private String disciplina;
 	private String periodoLetivo;
@@ -17,11 +17,11 @@ public class Titulo {
 		this.universidade = universidade;
 	}
 	
-	public String getNumeroRegistro() {
-		return numeroRegistro;
+	public String getNumeroDisciplina() {
+		return numeroDisciplina;
 	}
-	public void setNumeroRegistro(String numeroRegistro) {
-		this.numeroRegistro = numeroRegistro;
+	public void setNumeroDisciplina(String numeroDisciplina) {
+		this.numeroDisciplina = numeroDisciplina;
 	}
 	
 	public String getDepartamento() {
@@ -63,3 +63,4 @@ public class Titulo {
 		this.cargaHoraria = cargaHoraria;
 	}
 }
+
