@@ -66,8 +66,45 @@ public class ExportaExcel {
 				
 				al.setAvaliacao(as5, 1);
 				
+				
+				Cell a6 = sheet.getCell(5,i);
+				String as6 = a6.getContents();
+				//av.setNota(Float.parseFloat(as6));
+				
+				al.setAvaliacao(as6, 2);
+				
+				
+				Cell a7 = sheet.getCell(6,i);
+				String as7 = a7.getContents();
+				//av.setNota(Float.parseFloat(as7));
+				
+				al.setAvaliacao(as7, 3);
+				
+				
+				Cell a8 = sheet.getCell(7, i);
+				String as8 = a8.getContents();
+				
+				al.setAvaliacao(as8, 4);
+				
+				
+				Cell a9 = sheet.getCell(8, i);
+				String as9 = a9.getContents();
+				
+				al.setAvaliacao(as9, 5);
+				
+				
+				Cell a10 = sheet.getCell(9,i);
+				String as10 = a10.getContents();
+				al.setMedia(as10);		
+				
+				
 				System.out.println(al.getAvaliacao(0));
 				System.out.println(al.getAvaliacao(1));
+				System.out.println(al.getAvaliacao(2));
+				System.out.println(al.getAvaliacao(3));
+				System.out.println(al.getAvaliacao(4));
+				System.out.println(al.getAvaliacao(5));
+			
 				//arrayAvaliacao.add(av);
 				
 				//Aluno aluno = new Aluno(as3, Integer.parseInt(as2), arrayAvaliacao);
