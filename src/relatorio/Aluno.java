@@ -10,6 +10,7 @@ public class Aluno extends Titulo{
 	private int colegiado;
 	private String avaliacao[] = new String[6];
 	private String media;
+	private String resultado;
 	
 	//public Aluno(String nome, int matricula, ArrayList avaliacao){
 		///super();
@@ -19,12 +20,24 @@ public class Aluno extends Titulo{
 		//this.avaliacao = avaliacao;
 	//}
 	
+	public String getResultado() {
+		return resultado;
+	}
+
+
+	public void setResultado(String resultado) {
+		this.resultado = resultado;
+	}
+
+
 	public String getMedia(){
 		return media;
 	}
 	
-	public void setMedia(String media){
+		
+	public void setMedia(String media){		
 		this.media = media;
+		 	 
 	}
 	
 	public void setAvaliacao(String avaliacao, int i) {
@@ -33,6 +46,10 @@ public class Aluno extends Titulo{
 	
 	public String getAvaliacao(int i) {
 		return this.avaliacao[i];
+	} 
+	
+	public String[] getAvaliacao() {
+		return this.avaliacao;
 	} 
 	
 	public String getNome() {
