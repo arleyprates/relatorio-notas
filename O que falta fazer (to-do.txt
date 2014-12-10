@@ -1,0 +1,9 @@
+Faltam fazer:
+
+1=> Limpar os comentários
+2=> Fazer o tratamento dos erros
+3=> Trabalhar com herança
+4=> Documentar o código
+5=> limpar classes, métodos e atributos inúteis
+6=> filtrar para somente abrir .xls
+7=> mostrar caixa de diálogo indicando erro de tipo.
