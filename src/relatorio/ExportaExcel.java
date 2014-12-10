@@ -28,6 +28,30 @@ public class ExportaExcel {
 		
 		ArrayList<Aluno> arrayAluno = new ArrayList<Aluno>();
 		
+		Aluno tit = new Aluno();
+			
+		Cell t1 = sheet.getCell(0,0);
+		String ts1 = t1.getContents();
+		tit.setUniversidade(ts1);
+		
+		Cell t2 = sheet.getCell(0,5);
+		String ts2 = t2.getContents();
+		tit.setPeriodoLetivo(ts2);
+		
+		Cell t3 = sheet.getCell(0,6);
+		String ts3 = t3.getContents();
+		tit.setNumeroDisciplina(ts3);
+
+		Cell t4 = sheet.getCell(0,7);
+		String ts4 = t4.getContents();
+		tit.setCargaHoraria(ts4);
+			
+		Cell t5 = sheet.getCell(2,5);
+		String ts5 = t5.getContents();
+		tit.setDisciplina(ts5);
+			
+		arrayAluno.add(tit);
+		
 		for(int i = 0; i < linhas; i++) {			
 			
 			Cell a1 = sheet.getCell(0,i);
