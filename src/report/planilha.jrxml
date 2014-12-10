@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.0.0.final using JasperReports Library version 6.0.0  -->
+<!-- 2014-12-10T16:47:52 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="planilha" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d7116c80-1097-472b-9bcf-08fcdc3f861d">
 	<property name="ireport.zoom" value="1.2100000000000002"/>
 	<property name="ireport.x" value="361"/>
@@ -18,11 +20,6 @@
 	<field name="nome" class="java.lang.String">
 		<fieldDescription><![CDATA[nome]]></fieldDescription>
 	</field>
-	<field name="universidade" class="java.lang.String"/>
-	<field name="periodoLetivo" class="java.lang.String"/>
-	<field name="numeroDisciplina" class="java.lang.String"/>
-	<field name="cargaHoraria" class="java.lang.String"/>
-	<field name="disciplina" class="java.lang.String"/>
 	<field name="avaliacao[0]" class="java.lang.String"/>
 	<field name="avaliacao[1]" class="java.lang.String"/>
 	<field name="avaliacao[2]" class="java.lang.String"/>
@@ -30,6 +27,7 @@
 	<field name="avaliacao[4]" class="java.lang.String"/>
 	<field name="avaliacao[5]" class="java.lang.String"/>
 	<field name="media" class="java.lang.String"/>
+	<field name="resultado" class="java.lang.String"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -282,73 +280,80 @@
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="31" splitType="Stretch">
+		<band height="33" splitType="Stretch">
 			<textField>
-				<reportElement x="307" y="2" width="20" height="14" uuid="0e3dfc4b-82ff-41b7-91ea-4e6790221692"/>
+				<reportElement x="307" y="5" width="20" height="14" uuid="0e3dfc4b-82ff-41b7-91ea-4e6790221692"/>
 				<textElement>
 					<font size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{avaliacao[0]}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="257" y="2" width="20" height="14" uuid="8ff9d8df-36a8-4f79-9a67-3e80f969022c"/>
+				<reportElement x="257" y="5" width="20" height="14" uuid="8ff9d8df-36a8-4f79-9a67-3e80f969022c"/>
 				<textElement>
 					<font size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{colegiado}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="357" y="2" width="20" height="14" uuid="7320c6f6-2571-416e-ad7d-fb24d5bb3748"/>
+				<reportElement x="357" y="5" width="20" height="14" uuid="7320c6f6-2571-416e-ad7d-fb24d5bb3748"/>
 				<textElement>
 					<font size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{avaliacao[1]}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="55" y="2" width="195" height="14" uuid="63d2b84f-9cc6-4121-9089-b8423ca1862c"/>
+				<reportElement x="57" y="5" width="195" height="14" uuid="63d2b84f-9cc6-4121-9089-b8423ca1862c"/>
 				<textElement>
 					<font size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="5" y="2" width="50" height="14" uuid="7cad4adc-c668-48e6-8ebe-a82c8ddc800e"/>
+				<reportElement x="5" y="5" width="50" height="14" uuid="7cad4adc-c668-48e6-8ebe-a82c8ddc800e"/>
 				<textElement>
 					<font size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{matricula}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="407" y="2" width="20" height="14" uuid="a89a8f34-564f-4cb6-963a-392cc47e1b42"/>
+				<reportElement x="407" y="5" width="20" height="14" uuid="a89a8f34-564f-4cb6-963a-392cc47e1b42"/>
 				<textElement>
 					<font size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{avaliacao[2]}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="457" y="2" width="20" height="14" uuid="a36880c7-9733-43be-964e-650591e551e6"/>
+				<reportElement x="457" y="5" width="20" height="14" uuid="a36880c7-9733-43be-964e-650591e551e6"/>
 				<textElement>
 					<font size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{avaliacao[3]}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="507" y="2" width="20" height="14" uuid="f385acd5-06c4-4af7-abe7-c938023ea6ae"/>
+				<reportElement x="507" y="5" width="20" height="14" uuid="f385acd5-06c4-4af7-abe7-c938023ea6ae"/>
 				<textElement>
 					<font size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{avaliacao[4]}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="557" y="2" width="20" height="14" uuid="5903b62d-cae9-4229-a801-384799a95b1e"/>
+				<reportElement x="557" y="5" width="20" height="14" uuid="5903b62d-cae9-4229-a801-384799a95b1e"/>
 				<textElement>
 					<font size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{avaliacao[5]}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="607" y="2" width="69" height="20" uuid="1b2b68e5-fe72-4b1d-947d-c1f2d8584793"/>
+				<reportElement x="607" y="5" width="40" height="14" uuid="1b2b68e5-fe72-4b1d-947d-c1f2d8584793"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{media}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="748" y="5" width="52" height="14" uuid="6d12f292-6230-4032-8945-fb13696a7f95"/>
+				<textFieldExpression><![CDATA[$F{resultado}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
@@ -381,3 +386,4 @@
 		<band height="42" splitType="Stretch"/>
 	</summary>
 </jasperReport>
+
