@@ -3,7 +3,7 @@ package relatorio;
 //import java.util.ArrayList;
 //import java.util.List;
 
-public class Aluno extends Titulo{
+public class Aluno {
 
 	private String nome;
 	private int matricula;
