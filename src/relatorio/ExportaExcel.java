@@ -16,7 +16,7 @@ public class ExportaExcel {
 		this.diretorioPlanilha = diretorioXLS;		
 	}
 	
-	public ArrayList<Aluno> todosAlunos()  throws IOException, BiffException{
+	public List<Aluno> todosAlunos()  throws IOException, BiffException{
 		
 		Workbook workbook = Workbook.getWorkbook(new File(diretorioPlanilha));//Colocar o arquivo de excel correto
 		
@@ -25,7 +25,7 @@ public class ExportaExcel {
 		int colunas = sheet.getRows();
 		boolean a = false;
 		
-		ArrayList<Aluno> arrayAluno = new ArrayList<Aluno>();
+		List<Aluno> arrayAluno = new ArrayList<Aluno>();
 				
 		
 		for(int i = 0; i < colunas; i++) {			
