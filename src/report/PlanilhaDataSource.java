@@ -14,7 +14,7 @@ import relatorio.Aluno;
 import relatorio.ExportaExcel;
 
 public class PlanilhaDataSource implements JRDataSource {
-	ArrayList<Aluno> alunos = null;
+	List<Aluno> alunos = null;
 	JRBeanCollectionDataSource beanCollection;
 	
 	//private Iterator itrAlunos;
