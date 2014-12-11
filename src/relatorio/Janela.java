@@ -75,6 +75,9 @@ public class Janela extends JFrame {
 				return "Planilhas (.xls)"; // , .csv, .xlsx)";
 			}
 		});
+		
+		//impedir que o usuário possa escolher qualquer outro tipo de arquivo
+		arquivo.setAcceptAllFileFilterUsed(false);
 
 		// armazena a escolha do usuário.
 		int resposta = arquivo.showOpenDialog(Janela.this);
