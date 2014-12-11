@@ -1,6 +1,6 @@
 Faltam fazer:
 
-1=> Limpar os comentários
+1=> Limpar os excessos de linhas comentadas
 2=> Fazer o tratamento dos erros => dar um e.getMessage(); na parte do report.
     => mostrar caixa de diálogo indicando erro de tipo.
 3=> Trabalhar com herança
