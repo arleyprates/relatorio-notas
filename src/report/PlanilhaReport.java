@@ -52,7 +52,8 @@ public class PlanilhaReport {
 			viewer.setLocationRelativeTo(null); 
 			viewer.show();
 		}catch(Exception e){
-			e.printStackTrace();
+			JOptionPane.showMessageDialog(null, e.getMessage());
+			System.exit(-1);
 		}
 	}
 }
