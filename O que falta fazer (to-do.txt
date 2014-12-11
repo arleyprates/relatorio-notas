@@ -14,6 +14,7 @@ feito 6=> filtrar JFileChooser para somente abrir .xls pelo filechooser.
 feito 7=> trocar ArrayList<> nome = new ArrayList<>();
            por List<> nome = new ArrayList<>();
 
+<+==========================================================================+>
 Alguém poderia dar um boa olhada das linha 125 a 131 do exportaExcel.java para ver por que isso?
 E se é isso que faz o erro na hora de passar pro jasper?
         
