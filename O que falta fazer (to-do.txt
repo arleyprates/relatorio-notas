@@ -4,6 +4,7 @@ Faltam fazer:
 3=> Trabalhar com herança
 4=> Documentar o código
 5=> limpar classes, métodos e atributos inúteis
+8=> Trabalhar com o properties
 
 <+==========================================================================+>
 Já feito:
