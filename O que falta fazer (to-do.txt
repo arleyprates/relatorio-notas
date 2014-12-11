@@ -1,9 +1,26 @@
 Faltam fazer:
 
 1=> Limpar os excessos de linhas comentadas
-2=> Fazer o tratamento dos erros => dar um e.getMessage(); na parte do report.
-    => mostrar caixa de diálogo indicando erro de tipo.
 3=> Trabalhar com herança
 4=> Documentar o código
 5=> limpar classes, métodos e atributos inúteis
-6=> filtrar para somente abrir .xls pelo filechooser.
+
+<+==========================================================================+>
+Já feito:
+
+Feito 2=> Fazer o tratamento dos erros => dar um e.getMessage(); na parte do report.
+    => mostrar caixa de diálogo indicando erro de tipo.
+feito 6=> filtrar JFileChooser para somente abrir .xls pelo filechooser.
+feito 7=> trocar ArrayList<> nome = new ArrayList<>();
+           por List<> nome = new ArrayList<>();
+
+Alguém poderia dar um boa olhada das linha 125 a 131 do exportaExcel.java para ver por que isso?
+E se é isso que faz o erro na hora de passar pro jasper?
+        
+        System.out.println(al.getResultado());				
+				System.out.println(al.getAvaliacao(0));
+				System.out.println(al.getAvaliacao(1));
+				//System.out.println(al.getAvaliacao(2));
+			//	System.out.println(al.getAvaliacao(3));
+			//	System.out.println(al.getAvaliacao(4));
+			//	System.out.println(al.getAvaliacao(5));
